@@ -553,7 +553,7 @@ void Panreglas()
     {
         printf("No se cargo la imagen de reglas");
     }
-    al_draw_scaled_bitmap(reglas, 0, 0, 700, 400, 0, 0, 800, 500, 0);
+    al_draw_scaled_bitmap(reglas, 0, 0, 960, 540, 0, 0, 800, 500, 0);
     al_flip_display();
 }
 //FONDO COMIENZO
