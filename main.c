@@ -410,8 +410,9 @@ void carrera()
         al_draw_scaled_bitmap(fondo_carrera, c, 0, 800, 508, 0, 0, 800, 500, 0);
     }
     //if para que cuando llegue al final suene una misiquita
-    if(c == 9400)
-    {
+    if(c == 9400) {
+
+        pantallaganaste=1;
         sonido_ganador();
         al_play_sample(ganador, 1, 1, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
     }
@@ -1054,6 +1055,9 @@ int main()
                         {
                             minijuego=3;
                         }
+                        if(minijuego==5){
+                            puntoEnElJuego=6;
+                        }
                         break;
                     }
                         //TRIVIA: PASA DE LA FELICITACION A LA PREGUNTA
@@ -1063,6 +1067,7 @@ int main()
                     {
                         if(pantallaganaste==1)
                         {
+                            printf(puntoEnElJuego);
                             if(puntoEnElJuego==2 && minijuego==2)
                             {
                                 entrejuegos();
