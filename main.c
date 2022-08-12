@@ -410,8 +410,8 @@ void carrera()
         al_draw_scaled_bitmap(fondo_carrera, c, 0, 800, 508, 0, 0, 800, 500, 0);
     }
     //if para que cuando llegue al final suene una misiquita
-    if(c == 9400) {
-
+    if(c == 9400)
+    {
         pantallaganaste=1;
         sonido_ganador();
         al_play_sample(ganador, 1, 1, 1, ALLEGRO_PLAYMODE_ONCE, NULL);
@@ -548,7 +548,7 @@ void Pancreditos()
 void Panreglas()
 {
     ALLEGRO_BITMAP *reglas;
-    reglas = al_load_bitmap("Imagenes/Fondo_Reglas.jpg");
+    reglas = al_load_bitmap("Imagenes/Fondo_Reglas.jpeg");
     if(!reglas)
     {
         printf("No se cargo la imagen de reglas");
@@ -1047,6 +1047,9 @@ int main()
                     case ALLEGRO_KEY_Z:
                     {
                         minijuego++;
+                        if(minijuego==5){
+                            puntoEnElJuego=6;
+                        }
                         if(minijuego==3)
                         {
                             al_start_timer(timer_atrapalo);
@@ -1054,9 +1057,6 @@ int main()
                         if(puntoEnElJuego==4)
                         {
                             minijuego=3;
-                        }
-                        if(minijuego==5){
-                            puntoEnElJuego=6;
                         }
                         break;
                     }
@@ -1067,7 +1067,6 @@ int main()
                     {
                         if(pantallaganaste==1)
                         {
-                            printf(puntoEnElJuego);
                             if(puntoEnElJuego==2 && minijuego==2)
                             {
                                 entrejuegos();
